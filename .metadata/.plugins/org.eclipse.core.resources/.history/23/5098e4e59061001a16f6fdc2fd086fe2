@@ -24,10 +24,14 @@ public class Cryptography {
 
 	public String en_Vigenere(String input, String key) {
 		String output = "";
-		int[] outKey = new int[key.length()];
+		char[] outKey = new char[key.length()];
 		
 		for (int i = 0; i < key.length(); i++) {
-			outKey[i] = (key.charAt(i) - 'A');
+			outKey[i] = key.charAt(i);
+			while (outKey[i] > 26) {
+				outKey[i] = (char) (outKey[i] - 26);
+			}
+			System.out.println('A' - key.charAt(i) + "," + (int)outKey[i]);
 		}
 		
 		for (int i = 0; i < input.length(); i++) {
@@ -40,36 +44,11 @@ public class Cryptography {
 			}
 		}
 		
-		System.out.println("de: " + de_Vigenere(output, key));
-		
 		return output;
 	}
 	
 	public String de_Vigenere(String input, String key) {
 		String output = "";
-		
-		int[] outKey = new int[key.length()];
-		
-		for (int i = 0; i < key.length(); i++) {
-			if (outKey[i] >= 'A' && outKey[i] <= 'Z') {
-				outKey[i] = (key.charAt(i) - 'A');
-			} else if (outKey[i] >= 'a' && outKey[i] <= 'z') {
-				outKey[i] = (key.charAt(i) - 'a');
-			} else {
-				System.out.println("Please enter a key without special characters!");
-				System.exit(0);
-			}
-		}
-		
-		for (int i = 0; i < input.length(); i++) {
-			if (input.charAt(i) >= 'A' && input.charAt(i) <= 'Z' && input.charAt(i) - outKey[i] < 'A') { //upper
-				output += (char) (1 + 'Z' - ('A' - (input.charAt(i) - outKey[i])));
-			} else if (input.charAt(i) >= 'a' && input.charAt(i) <= 'z' && input.charAt(i) - outKey[i] < 'a') { //lower
-				output += (char) (1 + 'z' - ('a' - (input.charAt(i) - outKey[i])));
-			}/* else {
-				output += (char) (input.charAt(i) - key);
-			}*/
-		}
 		
 		return output;
 	}

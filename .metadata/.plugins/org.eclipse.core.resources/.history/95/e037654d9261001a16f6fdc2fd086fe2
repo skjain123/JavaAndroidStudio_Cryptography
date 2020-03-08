@@ -51,14 +51,7 @@ public class Cryptography {
 		int[] outKey = new int[key.length()];
 		
 		for (int i = 0; i < key.length(); i++) {
-			if (outKey[i] >= 'A' && outKey[i] <= 'Z') {
-				outKey[i] = (key.charAt(i) - 'A');
-			} else if (outKey[i] >= 'a' && outKey[i] <= 'z') {
-				outKey[i] = (key.charAt(i) - 'a');
-			} else {
-				System.out.println("Please enter a key without special characters!");
-				System.exit(0);
-			}
+			outKey[i] = (key.charAt(i) - 'A');
 		}
 		
 		for (int i = 0; i < input.length(); i++) {
