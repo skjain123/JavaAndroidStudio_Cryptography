@@ -24,15 +24,21 @@ public class Cryptography {
 	private String en_Caesar(String input, int key) {
 		String output = "";
 		
+		int ul = 65; //upper low
+		int uh = 90; //upper high
+		
+		int ll = 97; //lower low
+		int lh = 122; //lower high
+		
 		while (key > 26) {
 			key = key - 26;
 		}
 		
 		for (int i = 0; i < input.length(); i++) {
-			if (input.charAt(i) >= 'A' && input.charAt(i) <= 'Z' && input.charAt(i) + key > 'Z') { //upper
-				output += (char) ('A' - 1 + Math.abs('Z' - (input.charAt(i) + key)));
-			} else if (input.charAt(i) >= 'a' && input.charAt(i) <= 'z' && input.charAt(i) + key > 'z') { //lower
-				output += (char) ('a' - 1 + Math.abs('z' - (input.charAt(i) + key)));
+			if (input.charAt(i) >= ul && input.charAt(i) <= uh && input.charAt(i) + key > uh) { //upper
+				output += (char) (ul - 1 + Math.abs(uh - (input.charAt(i) + key)));
+			} else if (input.charAt(i) >= ll && input.charAt(i) <= lh && input.charAt(i) + key > lh) { //lower
+				output += (char) (ll - 1 + Math.abs(lh - (input.charAt(i) + key)));
 			} else {
 				output += (char) (input.charAt(i) + key);
 			}
@@ -51,13 +57,15 @@ public class Cryptography {
 		}
 		
 		for (int i = 0; i < input.length(); i++) {
+			System.out.println((int) (input.charAt(i)) + "," + (1 + 'z' - ('a' - (input.charAt(i) - key))));
+			
 			if (input.charAt(i) >= 'A' && input.charAt(i) <= 'Z' && input.charAt(i) - key < 'A') { //upper
-				output += (char) (1 + 'Z' - ('A' - (input.charAt(i) - key)));
+				output += (char) ('Z' - 'A' + (input.charAt(i)));
 			} else if (input.charAt(i) >= 'a' && input.charAt(i) <= 'z' && input.charAt(i) - key < 'a') { //lower
 				output += (char) (1 + 'z' - ('a' - (input.charAt(i) - key)));
-			}/* else {
+			} else {
 				output += (char) (input.charAt(i) - key);
-			}*/
+			}
 		}
 		
 		return output;
