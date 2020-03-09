@@ -19,7 +19,7 @@ public class Cryptography {
 		//System.out.println("de: " + de_Caesar(input, key));
 		
 		System.out.println("en: " + en_Vigenere(input, key));
-		System.out.println("de: " + de_Vigenere(input, key));
+		//System.out.println("dn: " + de_Vigenere(input, key));
 	}
 
 	public String en_Vigenere(String input, String key) {
@@ -27,8 +27,6 @@ public class Cryptography {
 		int[] outKey = new int[key.length()];
 		
 		key = key.toUpperCase();
-		
-		keyChecker(key);
 		
 		for (int i = 0; i < key.length(); i++) {
 			outKey[i] = (key.charAt(i) - 'A');
@@ -44,6 +42,8 @@ public class Cryptography {
 			}
 		}
 		
+		System.out.println("de: " + de_Vigenere(output, key));
+		
 		return output;
 	}
 	
@@ -52,12 +52,17 @@ public class Cryptography {
 		
 		int[] outKey = new int[key.length()];
 		
-		key = key.toUpperCase();
-		
-		keyChecker(key);
-		
 		for (int i = 0; i < key.length(); i++) {
-			outKey[i] = (key.charAt(i) - 'A');
+			if (key.charAt(i) >= 'A' && key.charAt(i) <= 'Z') {
+				outKey[i] = (key.charAt(i) - 'A');
+				System.out.println("upper" + outKey[i]);
+			} else if (key.charAt(i) >= 'a' && key.charAt(i) <= 'z') {
+				outKey[i] = (key.charAt(i) - 'a');
+				System.out.println("lower" + outKey[i]);
+			} else {
+				System.out.println("Please enter a key without special characters!");
+				System.exit(0);
+			}
 		}
 		
 		for (int i = 0; i < input.length(); i++) {
@@ -71,19 +76,6 @@ public class Cryptography {
 		}
 		
 		return output;
-	}
-
-	private void keyChecker(String key) {
-		for (int i = 0; i < key.length(); i++) {
-			if (key.charAt(i) >= 'A' && key.charAt(i) <= 'Z') {
-				continue;
-			} else if (key.charAt(i) >= 'a' && key.charAt(i) <= 'z') {
-				continue;
-			} else {
-				System.out.println("Please enter a key without special characters!");
-				System.exit(0);
-			}
-		}
 	}
 
 	

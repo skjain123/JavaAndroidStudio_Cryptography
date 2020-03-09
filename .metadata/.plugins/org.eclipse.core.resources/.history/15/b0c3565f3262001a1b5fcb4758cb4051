@@ -19,7 +19,7 @@ public class Cryptography {
 		//System.out.println("de: " + de_Caesar(input, key));
 		
 		System.out.println("en: " + en_Vigenere(input, key));
-		System.out.println("de: " + de_Vigenere(input, key));
+		//System.out.println("dn: " + de_Vigenere(input, key));
 	}
 
 	public String en_Vigenere(String input, String key) {
@@ -27,8 +27,6 @@ public class Cryptography {
 		int[] outKey = new int[key.length()];
 		
 		key = key.toUpperCase();
-		
-		keyChecker(key);
 		
 		for (int i = 0; i < key.length(); i++) {
 			outKey[i] = (key.charAt(i) - 'A');
@@ -44,6 +42,8 @@ public class Cryptography {
 			}
 		}
 		
+		System.out.println("de: " + de_Vigenere(output, key));
+		
 		return output;
 	}
 	
@@ -55,10 +55,6 @@ public class Cryptography {
 		key = key.toUpperCase();
 		
 		keyChecker(key);
-		
-		for (int i = 0; i < key.length(); i++) {
-			outKey[i] = (key.charAt(i) - 'A');
-		}
 		
 		for (int i = 0; i < input.length(); i++) {
 			if (input.charAt(i) >= 'A' && input.charAt(i) <= 'Z' && input.charAt(i) - outKey[i] < 'A') { //upper

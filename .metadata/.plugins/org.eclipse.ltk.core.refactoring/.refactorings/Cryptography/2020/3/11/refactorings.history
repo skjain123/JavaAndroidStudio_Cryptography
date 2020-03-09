@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract method &apos;private void keyChecker(String key)&apos; from &apos;Cryptography.de_Vigenere()&apos; to &apos;Cryptography&apos;&#x0D;&#x0A;- Original project: &apos;Cryptography&apos;&#x0D;&#x0A;- Method name: &apos;keyChecker&apos;&#x0D;&#x0A;- Destination type: &apos;Cryptography&apos;&#x0D;&#x0A;- Declared visibility: &apos;private&apos;" comments="false" description="Extract method &apos;keyChecker&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src&lt;{Cryptography.java" name="keyChecker" replace="false" selection="1603 309" stamp="1583777841493" version="1.0" visibility="2"/>
+</session>
