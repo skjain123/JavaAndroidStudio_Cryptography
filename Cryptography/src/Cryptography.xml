@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TableRow
+        android:layout_width="598dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="547dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow">
+
+        <RadioButton
+            android:id="@+id/ScytaleRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scytale Chipher" />
+
+        <RadioButton
+            android:id="@+id/VigenereRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vigenere Chipher" />
+
+        <RadioButton
+            android:id="@+id/CaesarRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Caesar Chipher" />
+    </TableRow>
+
+    <Button
+        android:id="@+id/de_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Decrypt"
+        tools:layout_editor_absoluteX="440dp"
+        tools:layout_editor_absoluteY="149dp" />
+
+    <Button
+        android:id="@+id/en_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Encrypt"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="149dp" />
+
+    <Space
+        android:layout_width="98dp"
+        android:layout_height="10dp"
+        tools:layout_editor_absoluteX="251dp"
+        tools:layout_editor_absoluteY="170dp" />
+
+    <TableRow
+        android:id="@+id/tableRow"
+        android:layout_width="600dp"
+        android:layout_height="150dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="206dp">
+
+        <TextView
+            android:id="@+id/en_text"
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:background="#32E91E63"
+            android:text="Encrypted Message"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/de_text"
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:background="#6100BCD4"
+            android:text="Decrypted Message"
+            android:textStyle="bold"
+            android:visibility="visible"
+            tools:visibility="visible" />
+    </TableRow>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
