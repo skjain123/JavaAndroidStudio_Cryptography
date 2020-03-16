@@ -6,89 +6,150 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TableRow
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="283dp"
+        android:layout_height="44dp"
+        android:text="Cryptography"
+        android:textAllCaps="true"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="598dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="547dp"
+        android:layout_height="228dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <LinearLayout
+            android:layout_width="302dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:text="Input: "
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="match_parent"
+                android:layout_height="183dp"
+                android:ems="10"
+                android:gravity="top|left"
+                android:inputType="textLongMessage|text|textImeMultiLine"
+                android:lines="8"
+                android:maxLines="10"
+                android:minLines="6"
+                android:scrollbars="vertical"
+                android:singleLine="false"
+                android:text="Input" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:text="Output: "
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="181dp"
+                android:text="Output"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="598dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/en_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Encrypt" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/de_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="decrypt" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="598dp"
+        android:layout_height="76dp"
+        android:layout_marginBottom="200dp"
+        android:layout_weight="1"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow">
+        app:layout_constraintStart_toStartOf="parent">
 
         <RadioButton
-            android:id="@+id/ScytaleRB"
+            android:id="@+id/RB_Scytale"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Scytale Chipher" />
-
-        <RadioButton
-            android:id="@+id/VigenereRB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Vigenere Chipher" />
-
-        <RadioButton
-            android:id="@+id/CaesarRB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Caesar Chipher" />
-    </TableRow>
-
-    <Button
-        android:id="@+id/de_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Decrypt"
-        tools:layout_editor_absoluteX="440dp"
-        tools:layout_editor_absoluteY="149dp" />
-
-    <Button
-        android:id="@+id/en_Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Encrypt"
-        tools:layout_editor_absoluteX="66dp"
-        tools:layout_editor_absoluteY="149dp" />
-
-    <Space
-        android:layout_width="98dp"
-        android:layout_height="10dp"
-        tools:layout_editor_absoluteX="251dp"
-        tools:layout_editor_absoluteY="170dp" />
-
-    <TableRow
-        android:id="@+id/tableRow"
-        android:layout_width="600dp"
-        android:layout_height="150dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="206dp">
-
-        <TextView
-            android:id="@+id/en_text"
-            android:layout_width="280dp"
             android:layout_height="match_parent"
-            android:background="#32E91E63"
-            android:text="Encrypted Message"
-            android:textStyle="bold" />
+            android:text="Scytale" />
 
-        <TextView
-            android:id="@+id/de_text"
-            android:layout_width="280dp"
-            android:layout_height="match_parent"
-            android:background="#6100BCD4"
-            android:text="Decrypted Message"
-            android:textStyle="bold"
-            android:visibility="visible"
-            tools:visibility="visible" />
-    </TableRow>
+        <RadioButton
+            android:id="@+id/RB_Caesar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Caesar" />
 
+        <RadioButton
+            android:id="@+id/RB_Vigenere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vigenere" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
