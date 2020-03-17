@@ -49,18 +49,36 @@
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/input_textView"
                 android:layout_width="match_parent"
-                android:layout_height="183dp"
+                android:layout_height="79dp"
+                android:cursorVisible="true"
                 android:ems="10"
                 android:gravity="top|left"
+                android:hint="input"
                 android:inputType="textLongMessage|text|textImeMultiLine"
                 android:lines="8"
+                android:linksClickable="true"
                 android:maxLines="10"
                 android:minLines="6"
                 android:scrollbars="vertical"
-                android:singleLine="false"
-                android:text="Input" />
+                android:singleLine="false" />
+
+            <EditText
+                android:id="@+id/key_textView"
+                android:layout_width="match_parent"
+                android:layout_height="99dp"
+                android:cursorVisible="true"
+                android:ems="10"
+                android:gravity="top|left"
+                android:hint="key"
+                android:inputType="textLongMessage|text|textImeMultiLine"
+                android:lines="8"
+                android:linksClickable="true"
+                android:maxLines="10"
+                android:minLines="6"
+                android:scrollbars="vertical"
+                android:singleLine="false" />
         </LinearLayout>
 
         <LinearLayout
@@ -76,11 +94,11 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/output_text"
                 android:layout_width="match_parent"
                 android:layout_height="181dp"
                 android:text="Output"
-                android:textSize="24sp" />
+                android:textSize="18sp" />
 
         </LinearLayout>
     </LinearLayout>
@@ -142,13 +160,13 @@
         <RadioButton
             android:id="@+id/RB_Caesar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Caesar" />
 
         <RadioButton
             android:id="@+id/RB_Vigenere"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Vigenere" />
     </LinearLayout>
 
